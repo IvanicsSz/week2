@@ -18,9 +18,29 @@ def add_to_inventory(inventory, added_items):
             inventory[i]=1
     return inventory#new inventory
 
+def print_table(order):
+    key_max=max(inv, key=len) #gold has the max value
+    key_asc=sorted(inv, key=inv.get) #for reversed get start for the ending
+    #for i in key_lenght:
+    #    print (len(i))
+    print (key_asc)
+    print (key_max)
+
+#    Inventory:
+#  count    item name
+#--------------------
+#     45    gold coin
+#     12        arrow
+#      6        torch
+#      2       dagger
+#      1         rope
+#      1         ruby
+#--------------------
+#Total number of items: 67   right-justified.
 inv = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
 dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
 
 display_inventory()
 inv=add_to_inventory(inv,dragon_loot)
 display_inventory()
+print_table("")
