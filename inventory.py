@@ -56,7 +56,7 @@ def import_inventory(filename):
                 inv[item_list[i][0]]+=int(item_list[i][1])
             else:
                 inv[item_list[i][0]]=int(item_list[i][1])
-    print (inv)
+    #print (inv)
 
 def export_inventory(filename):
     if len(filename)<2:
