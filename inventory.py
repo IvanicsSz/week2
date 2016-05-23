@@ -58,14 +58,21 @@ def import_inventory(filename):
                 inv[item_list[i][0]]=int(item_list[i][1])
     print (inv)
 
+def export_inventory(filename):
+    if len(filename)<2:
+        filename="export_inventory.csv"
+    with open(filename,"w",encoding="utf8") as w:
+        w.write("item_name,count\n")
+        for i in inv:
+            w.write("{0},{1}\n".format(i,inv[i]))
 
 inv = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
 dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
 
-filename=str(file_name())
-print (filename)
+import_file=str(file_name())
 display_inventory()
 inv=add_to_inventory(inv,dragon_loot)
 display_inventory()
 print_table("count,desc")
-import_inventory(filename)
+import_inventory(import_file)
+export_inventory(import_file)
